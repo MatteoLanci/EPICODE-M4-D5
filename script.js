@@ -12,21 +12,42 @@ if (window.location.search) {
     .then((book) => bookDetail(book))
     .catch((error) => {
       console.log("HTTP error", error);
+      booksRow.innerHTML = `Ooops, something went wrong with your request`;
     });
 }
 
 function bookDetail(book) {
   console.log(book);
+
   const bookDetailContainer = document.createElement("div");
-  bookDetailContainer.classList.add("d-flex", "gap-5");
+  bookDetailContainer.classList.add("card", "mb-3");
+
+  const bookDetailCardRow = document.createElement("div");
+  bookDetailCardRow.classList.add("row", "g-0");
+
+  const bookDetailImgContainer = document.createElement("div");
+  bookDetailImgContainer.classList.add("col-md-4", "w-auto");
   const bookDetailImg = document.createElement("img");
-  bookDetailImg.classList.add("bookDetailImg");
   bookDetailImg.src = book.img;
+  bookDetailImg.classList.add("img-fluid", "rounded-start");
+  bookDetailImg.alt = book.title;
 
-  const bookDetailInfoWrapper = document.createElement("div");
-  bookDetailInfoWrapper.append(book.title);
+  const bookDetailInfoContainer = document.createElement("div");
+  bookDetailInfoContainer.classList.add("col-md-8");
 
-  bookDetailContainer.append(bookDetailImg, bookDetailInfoWrapper);
+  const bookDetailCardBody = document.createElement("div");
+  bookDetailCardBody.classList.add("card-body");
+
+  const bookDetailTitle = document.createElement("h5");
+  bookDetailTitle.classList.add("card-title");
+  bookDetailTitle.innerHTML = book.title;
+
+  bookDetailImgContainer.append(bookDetailImg);
+  bookDetailCardBody.append(bookDetailTitle);
+  bookDetailInfoContainer.append(bookDetailCardBody);
+  bookDetailCardRow.append(bookDetailImgContainer, bookDetailInfoContainer);
+
+  bookDetailContainer.append(bookDetailCardRow);
   booksRow.append(bookDetailContainer);
 }
 
