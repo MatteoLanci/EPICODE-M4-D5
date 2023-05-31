@@ -1,0 +1,248 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  list-style: none;
+  text-decoration: none;
+}
+
+body,
+html {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(#f3f0f0, #fffefe);
+  font-family: "Poppins", sans-serif;
+}
+
+.main {
+  width: 100%;
+  margin-top: 8rem;
+  padding-inline: 2rem;
+}
+
+/*!-------------------------------- BOOTSTRAP CSS OVERWRITE */
+
+/*?---------- NAVBAR OVERWRITE */
+.navbar {
+  background: #e0911b !important;
+  box-shadow: 0 0 10px #111111;
+}
+
+.navbar-brand span img {
+  width: 35px;
+}
+
+.dropdown-menu .active {
+  background-color: #e0911b !important;
+  color: #111111 !important;
+  font-weight: 500;
+}
+
+.nav-right {
+  position: absolute;
+  right: 5rem;
+  top: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 1rem;
+  gap: 1rem;
+}
+
+.dropdown-toggle img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#navCart {
+  color: #f1f0f0;
+}
+.bi-cart {
+  font-size: 1.2rem;
+}
+
+/*?---------- BS CARD OVERWRITE */
+
+.card {
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 2rem;
+  border: none;
+  box-shadow: 0 5px 10px #00000030;
+  width: 280px;
+  background-color: rgba(255, 255, 255, 0) !important;
+  position: relative;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+
+.special-offer {
+  position: absolute;
+  left: -5px;
+  top: -10px;
+  color: #f1f0f0;
+  border: 3px solid #f1f0f0;
+  background: #e4321a;
+  padding-inline: 0.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-img-top {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card h5 {
+  font-size: 0.9rem !important;
+  font-weight: 500;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0;
+}
+
+.card p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.card-category {
+  font-style: italic;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.card .bi {
+  transition: 0.3s;
+  display: inline-flex;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+.card .bi:hover {
+  transform: scale(1.3);
+}
+
+.card .bi-cart {
+  padding: 5px;
+}
+.card .bi-cart-check {
+  background-color: #22ca01;
+  display: inline-flex;
+  border-radius: 50%;
+  color: #f9f9f9;
+  padding: 5px;
+}
+
+.cardMore {
+  text-decoration: none !important;
+}
+
+/*?---------- BS MODAL OVERWRITE */
+
+.modal-body {
+  position: relative;
+  overflow: hidden;
+}
+
+.cartElement {
+  list-style-position: inside !important;
+}
+
+#checkoutMsg {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #22ca01;
+  color: #f9f9f9;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  animation: slideUpDown 5s ease-in;
+}
+@keyframes slideUpDown {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 0;
+  }
+  100% {
+    bottom: -150px;
+  }
+}
+
+.bi-trash {
+  cursor: pointer;
+  transition: 0.2s;
+}
+.bi-trash:hover {
+  color: #e4321a;
+}
+
+.d-none {
+  display: none;
+}
+
+/*? KEYFRAME PER ANIMAZIONE ICONA CARRELLO IN NAVBAR */
+@keyframes cartFilled {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*!-------------------------------- FOOTER SECTION */
+.footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  background: #e0911b !important;
+  box-shadow: 0 0 10px #111111;
+  width: 100%;
+  height: 200px;
+  color: #f1f0f0;
+  margin-top: 5rem;
+}
+
+/*?---------- DETTAGLI.HTML STYLE */
+.bookDetailImg {
+  height: 60vh;
+  width: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px #00000070;
+  cursor: pointer;
+}
+.bookDetailImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
